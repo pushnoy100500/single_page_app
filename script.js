@@ -1,9 +1,14 @@
 $().ready(function() {
     $("#form1").validate({
+        debug: true,
         rules: {
             user: {
                 required: true,
-                minlength: 5
+                minlength: 5,
+                focusCleanup: true,
+                focusInvalid: false,
+                onfocusout: false
+                
             },
             pass1: {
                 required: true,
@@ -12,22 +17,58 @@ $().ready(function() {
             pass2: {
                 required: true,
                 minlength: 5,
-                equalTo: "#pass1"
+                equalTo: "#pass1",
+                onkeyup: false
             },
             email: {
                 required: true,
                 email: true
             },
-            $(".datepicker").datepicker({
+            datepicker: {
+                required: true,
                 minDate: new Date(1910,0,1),
                 maxDate: new Date(2010,0,1),
                 yearRange: '1910:2010' ,
                 changeYear: true,
                 changeMonth: true
-            });
+            },
+            languages: {
+                required: true,
+                minlength: 4
+            },
+            description: {
+                required: false,
+                max: 200
+            }
             
-        }
-    })
+        },
+        
+        //messages if wrong
+        messages: {
+            user: {
+                required: "Please type your username",
+                minlength: "Your username must consist of at least 5 characters"
+            },
+            pass1: {
+                required: "Please provide a password",
+                minlength: "Your password must be at least 5 characters"
+            },
+            pass2: {
+                required: "Please confirm your password",
+                minlength: "Your password must be at least 5 characters long",
+                equalTo: "Please enter the same password as above"
+            },
+            datepicker: {
+                required: "You need to choose the date of birth"
+            },
+            languages: {
+                required: "Please type your programming language"
+            }
+            
+        },
+        success: "valid",
+        submitHandler: function() {$("#form1").ajaxSubmit();}
+    });
     
     
     
