@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Login Page</title>
+    <link href="style.css" rel="stylesheet" />
+    <!--linking stylesheet-->
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    
+    <!--this part for date picker-->
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/> 
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script> 
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script> 
+
+<script>
+    $(document).ready(function() { $("#datepicker").datepicker(); }); 
+</script>
+ 
+  </head>
+
+  <body>
+    <p id="demo"></p>
+    <!--registration form-->
+        <div id="form-div">
+            <form class="form" id="form1">
+
+                <!--input boxes for each category-->
+                <p>
+                    <input id="user" name="name" class="inputName" type="text" size="30" placeholder="username" onchange="checkFieldName()" required/>
+                </p>
+
+                <p>
+                    <input id="pass1" name="password1" class="inputs" type="password" size="16" placeholder="password" onchange="checkPass1()" required/>
+                </p>
+
+                <p>
+                    <input id="pass2" name="password2" class="inputs" type="password" placeholder="verify password" size="16" onkeyup="checkPass2()" required />
+                </p>
+                
+                <p>
+                    <input id="email" name="email" class="inputs" type="text" size="16" placeholder="email" required />
+                </p>
+                
+                <p>Date of Birth</p>
+                <input id="datepicker" required/>
+               
+                <p><input type="radio" name="sex" value="male" checked> Male</p>
+                <p><input type="radio" name="sex" value="female"> Female</p>
+
+                <p>
+                    <input id="languages" name="codingLanguage" class="inputName" type="text" size="16" placeholder="coding languages" required/>
+                </p>
+                
+                <p>
+                    <input id="description" name="description" class="inputs" type="text" size="250" placeholder="description" />
+                </p>
+
+                <!--Save and cancel links-->
+                <a id="btnRegister" href="JavaScript:void(0)" class="disabled" onclick="saving()">Save</a>
+                <a id="btnCancel" onclick="redirectToHome()">Cancel</a>
+            </form>
+        </div><!--closing registration form-->
+    <script src="script.js"></script>
+  </body>
+</html>
