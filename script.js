@@ -1,4 +1,93 @@
-function convertToJson {
+$().ready(function() {
+    $("#form1").validate({
+        rules: {
+            user: {
+                required: true,
+                minlength: 5
+            },
+            pass1: {
+                required: true,
+                minlength: 5
+            },
+            pass2: {
+                required: true,
+                minlength: 5,
+                equalTo: "#pass1"
+            },
+            email: {
+                required: true,
+                email: true
+            },
+            $(".datepicker").datepicker({
+                minDate: new Date(1910,0,1),
+                maxDate: new Date(2010,0,1),
+                yearRange: '1910:2010' ,
+                changeYear: true,
+                changeMonth: true
+            });
+            
+        }
+    })
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+   /* //changing day in DOB
+    $("#day").datepicker({
+        changeDay: true
+    })
+    //getter
+    var changeDay = $( "#day" ).datepicker( "option", "changeDay" );
+    //setter
+    $( "#day" ).datepicker( "option", "changeDay", true );
+    
+    //changing month in DOB
+    $("#month").datepicker({
+        changeMonth: true
+    })
+    //getter
+    var changeMonth = $( "#month" ).datepicker( "option", "changeMonth" );
+    //setter
+    $( "#month" ).datepicker( "option", "changeMonth", true );
+    
+    //changing month in DOB
+    $("#year").datepicker({
+        changeYear: true
+    })
+    //getter
+    var changeYear = $( "#year" ).datepicker( "option", "changeYear" );
+    //setter
+    $( "#year" ).datepicker( "option", "changeYear", true );
+})
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*function convertToJson {
    var geek = JSON.stringify($("#form1").serializeArray()); 
 }
 
@@ -79,4 +168,4 @@ function saving() {
         var res = document.getElementById("user").value + "," + document.getElementById("pass1").value;
         alert(res);
     }     
-}
+}*/
