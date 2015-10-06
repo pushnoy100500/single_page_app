@@ -1,69 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Login Page</title>
-    <link href="style.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Registration Page</title>
+    <!--<link href="style.css" rel="stylesheet" />-->
     <!--linking stylesheet-->
     <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    
-    <!--this part for date picker-->
 
-  
-    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script> 
+    <!--sources-->
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="js/mobile-fix.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
-<script>
-    $(document).ready(function() { $("#datepicker").datepicker(); }); 
-</script>
- 
-  </head>
+</head>
 
-  <body>
+</head>
 
+<body>
     <!--registration form-->
-        <div id="form-div" data-role="page">
-            <form class="form" id="form1">
+    <div id="Signin" data-role="page" id="page1">
 
-                <!--input boxes for each category-->
-                <p>
-                    <input id="user" name="name" class="inputName" type="text" size="30" placeholder="username" onchange="checkFieldName()" required/>
-                </p>
+        <!--header of Sign in page-->
+        <div data-role="header">
+            <h1 id="status1">Log in page</h1>
+        </div>
 
-                <p>
-                    <input id="pass1" name="password1" class="inputs" type="password" size="16" placeholder="password" onchange="checkPass1()" required/>
-                </p>
-
-                <p>
-                    <input id="pass2" name="password2" class="inputs" type="password" placeholder="verify password" size="16" onkeyup="checkPass2()" required />
-                </p>
-                
-                <p>
-                    <input id="email" name="email" class="inputs" type="text" size="16" placeholder="email" required />
-                </p>
-                
-                <p>Date of Birth</p>
-                <input id="datepicker" required/>
-               
-                <p><input type="radio" name="sex" value="male" checked> Male</p>
-                <p><input type="radio" name="sex" value="female"> Female</p>
-
-                <p>
-                    <input id="languages" name="codingLanguage" class="inputName" type="text" size="16" placeholder="coding languages" required/>
-                </p>
-                
-                <p>
-                    <input id="description" name="description" class="inputs" type="text" size="50" placeholder="description" />
-                </p>
-
-                <!--Save and cancel links-->
-                <a id="btnRegister" href="JavaScript:void(0)" class="disabled" onclick="saving()">Save</a>
-                <a id="btnCancel" onclick="redirectToHome()">Cancel</a>
+        <!--inputs-->
+        <div data-role="content">
+            <form id="form1" method="post" autocomplete="off">
+                <div data-role="fieldcontainer">
+                    <label for="username" data-theme="d">Username </label>
+                    <input type="text" id="username" name="username" data-theme="d" placeholder="Enter username" data-clear-btn="true" required/>
+                </div>
+                <div data-role="fieldcontainer">
+                    <label for="password" data-theme="d">Password</label>
+                    <input type="password" id="password" name="password" data-theme="d" placeholder="Enter password" data-clear-btn="true" required/>
+                    <label id="message"></label>
+                </div>
             </form>
-            <a data-rel="back" class="ui-btn"><< back</a>
-        </div><!--closing registration form-->
-    <script src="script.js"></script>
-  </body>
+        </div>
+
+        <!--footer-->
+        <div id="footer" data-role="footer" data-position="fixed">
+            <input type="button" data-icon="delete" value="Cancel" id="cancel" />
+            <input type="submit" data-icon="check" value="Submit" id="submit" />
+            <a href="#Signup" data-transition="fade" id="signup">Sign Up</a>
+        </div>
+
+
+        <!--Sign up page-->
+        <div id="Signup" data-role="page" id="page2">
+            <div data-role="header">
+                <h1>Sign Up</h1>
+            </div>
+
+            <div data-role="content">
+                <form class="form" id="form2" method="post" autocomplete="off">
+
+                    <!--input boxes for each category-->
+                    <div data-role="fieldcontainer">
+                        <label for="username" data-theme="d">Username </label>
+                        <input type="text" id="username" name="username" data-theme="d" placeholder="Enter username" data-clear-btn="true" required/>
+                    </div>
+
+                    <div data-role="fieldcontainer">
+                        <label for="password" data-theme="d">Password </label>
+                        <input type="password" id="pass1" name="password1" data-theme="d" placeholder="Enter password" data-clear-btn="true" required/>
+                    </div>
+
+                    <div data-role="fieldcontainer">
+                        <label for="verifyPaas" data-theme="d">Verify password </label>
+                        <input type="password" id="pass2" name="password2" data-theme="d" placeholder="Verify password" data-clear-btn="true" required/>
+                    </div>
+
+                    <div data-role="fieldcontainer">
+                        <label for="email" data-theme="d">Email </label>
+                        <input type="email" id="email" name="email" data-theme="d" placeholder="Enter email" data-clear-btn="true" required/>
+                    </div>
+
+                    <div data-role="fieldcontainer">
+                        <label for="gender" data-theme="d">Gender </label>
+                        <p>Female <input type="radio" name="sex" value="female"></p> 
+                        <p>Male <input type="radio" name="sex" value="male"></p>
+                    </div>
+
+                    <div data-role="fieldcontainer">
+                        <label for="codingLang" data-theme="d">Coding laguage(s) </label>
+                        <input type="text" id="codingLang" name="languages" data-theme="d" placeholder="Enter coding language" data-clear-btn="true" required/>
+                    </div>
+
+                    <div data-role="fieldcontainer">
+                        <label for="description" data-theme="d">Description </label>
+                        <input type="text" id="description" name="description" data-theme="d" data-clear-btn="true" placeholder="Enter description" />
+                    </div>
+                    
+                    <label id="message"></label>
+
+                    <!--footer-->
+                    <div id="footer" data-role="footer" data-position="fixed">
+                        <input type="button" data-icon="delete" value="Cancel" id="cnl" />
+                        <input type="submit" data-icon="check" value="Submit" id="save" />
+                        <a href="form.html" data-add-back-btn="true" data-icon="back" data-rel="back" title="Go back" id="back">Back</a>
+                    </div>
+                </form>
+            </div>
+            <!--closing registration form-->
+<!--link to my js-->
+<script src="script.js"></script>
+</body>
+
 </html>
+
