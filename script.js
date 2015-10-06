@@ -11,6 +11,7 @@ $(document).ready(function() {
     
     $("#cancel").click(function(){
        $("#form1").trigger('reset');
+        document.getElementById("message").innerHTML = "";
     });
     
     $('a[href*=#]').click(function(){
@@ -28,6 +29,8 @@ $(document).ready(function() {
             document.getElementById("message").innerHTML = "All fields are required";
         }
     });
+    
+    //this part was for going through every input that has attribute name "name" and if it's empty then place an error message
     /*on('click', function() {
         var flag = true,
             msg = "";
@@ -56,4 +59,5 @@ $(document).ready(function() {
     $("#back").click(function() {
         parent.history.back();
     });
+
 });
