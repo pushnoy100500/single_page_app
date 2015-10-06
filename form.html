@@ -11,8 +11,8 @@
     <![endif]-->
     
     <!--this part for date picker-->
-    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/> 
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script> 
+
+  
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script> 
 
 <script>
@@ -22,9 +22,9 @@
   </head>
 
   <body>
-    <p id="demo"></p>
+
     <!--registration form-->
-        <div id="form-div">
+        <div id="form-div" data-role="page">
             <form class="form" id="form1">
 
                 <!--input boxes for each category-->
@@ -55,13 +55,14 @@
                 </p>
                 
                 <p>
-                    <input id="description" name="description" class="inputs" type="text" size="250" placeholder="description" />
+                    <input id="description" name="description" class="inputs" type="text" size="50" placeholder="description" />
                 </p>
 
                 <!--Save and cancel links-->
                 <a id="btnRegister" href="JavaScript:void(0)" class="disabled" onclick="saving()">Save</a>
                 <a id="btnCancel" onclick="redirectToHome()">Cancel</a>
             </form>
+            <a data-rel="back" class="ui-btn"><< back</a>
         </div><!--closing registration form-->
     <script src="script.js"></script>
   </body>
