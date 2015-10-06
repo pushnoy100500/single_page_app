@@ -70,6 +70,6 @@ $(document).ready(function() {
     //back button to sign in page
     /*$("#back").click(function() {
         parent.history.back();
-    });*/
-
+    });
+*/
 });
